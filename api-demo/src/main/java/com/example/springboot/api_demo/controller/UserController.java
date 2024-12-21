@@ -32,7 +32,6 @@ public class UserController {
 		// TODO: ユーザーを取得する
 		final UserResponseDto user = this.usecase.findUserById(id);
 		return ResponseEntity.ok(user);
-
 	}
 
 	// @PostMapping
