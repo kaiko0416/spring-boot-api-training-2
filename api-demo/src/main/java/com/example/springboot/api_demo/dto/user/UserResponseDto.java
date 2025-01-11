@@ -1,4 +1,6 @@
-package com.example.springboot.api_demo.dto;
+package com.example.springboot.api_demo.dto.user;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class UserResponseDto {
     /*
      * レスポンスに必要なプロパティのみ用意する
@@ -20,5 +23,6 @@ public class UserResponseDto {
     private Long id;
     private String name;
     private String email;
+    @JsonProperty("isActive")
     private boolean isActive;
 }
