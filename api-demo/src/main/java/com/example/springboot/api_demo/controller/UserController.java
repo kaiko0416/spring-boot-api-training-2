@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.example.springboot.api_demo.dto.user.UserRequestDto;
 import com.example.springboot.api_demo.dto.user.UserResponseDto;
@@ -48,8 +49,9 @@ public class UserController {
 		return ResponseEntity.ok(isActive);
 	}
 
-	// @DeleteMapping("/{id}")
-	// public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
-	// // TODO: 指定したIDのユーザーを削除する
-	// }
+	@DeleteMapping("/{id}/delete")
+	public ResponseEntity<Boolean> deleteUser(@PathVariable Long id) {
+		final boolean isActive = this.usecase.deleteUserById(id);
+		return ResponseEntity.ok(isActive);
+	}
 }

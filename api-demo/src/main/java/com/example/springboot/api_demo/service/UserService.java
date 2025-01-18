@@ -65,4 +65,12 @@ public class UserService implements UserServiceInterface {
         final var neEntity = repository.save(oldEntity);
         return neEntity.isActive();
     }
+
+    @Override
+    public boolean deleteUserById(Long id) {
+        final var oldEntity = repository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("指定されたIDのユーザーは存在しません。"));
+        repository.delete(oldEntity);
+        return true;
+    }
 }
