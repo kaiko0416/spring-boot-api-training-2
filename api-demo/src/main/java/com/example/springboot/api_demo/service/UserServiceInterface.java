@@ -13,4 +13,6 @@ public interface UserServiceInterface {
     UserResponseDto addUser(UserRequestDto dto);
 
     boolean switchUserActiveById(Long id);
+
+    boolean deleteUserById(Long id);
 }

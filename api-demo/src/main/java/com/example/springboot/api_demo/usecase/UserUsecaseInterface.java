@@ -13,4 +13,6 @@ public interface UserUsecaseInterface {
     UserResponseDto addUser(UserRequestDto dto);
 
     boolean switchUserActiveById(Long id);
+
+    boolean deleteUserById(Long id);
 }
